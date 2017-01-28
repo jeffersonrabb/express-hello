@@ -2,7 +2,7 @@ var express = require('express')
 var app = express()
 
 app.get('/', function(req, res) {
-	res.send('DB Running Too! TRYING PORT 8443')
+	res.send('DB Running Too! TRYING PORT 8443. Looking good!')
 })
 
 app.listen(8443, function() {
