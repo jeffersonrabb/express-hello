@@ -2,19 +2,6 @@
     "family": "express-hello",
     "containerDefinitions": [
         {
-            "name": "db",
-            "image": "mongo",
-            "memory": 256,
-            "essential": true,
-            "portMappings": [
-                {
-                    "hostPort":27017,
-                    "containerPort":27017,
-                    "protocol": "tcp"
-                }
-            ]
-        },
-        {
             "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
             "name": "express-hello",
             "cpu": 10,
@@ -27,6 +14,19 @@
                 {
                     "hostPort":80,
                     "containerPort":8080,
+                    "protocol": "tcp"
+                }
+            ]
+        },
+        {
+            "name": "db",
+            "image": "mongo",
+            "memory": 256,
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort":27017,
+                    "containerPort":27017,
                     "protocol": "tcp"
                 }
             ]
